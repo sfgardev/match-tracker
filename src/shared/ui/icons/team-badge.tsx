@@ -14,7 +14,7 @@ export const TeamBadge = () => {
       <path
         d="M22.5 6.52073C23.4282 5.98483 24.5718 5.98483 25.5 6.52073L38.8205 14.2113C39.7487 14.7472 40.3205 15.7376 40.3205 16.8094V32.1906C40.3205 33.2624 39.7487 34.2528 38.8205 34.7887L25.5 42.4793C24.5718 43.0152 23.4282 43.0152 22.5 42.4793L9.17949 34.7887C8.25129 34.2528 7.67949 33.2624 7.67949 32.1906V16.8094C7.67949 15.7376 8.25129 14.7472 9.17949 14.2113L22.5 6.52073Z"
         stroke="url(#paint1_linear_72_611)"
-        stroke-width="2"
+        strokeWidth="2"
       />
       <rect
         x="14"
@@ -37,8 +37,8 @@ export const TeamBadge = () => {
           y2="48.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#CF1C51" />
-          <stop offset="1" stop-color="#AF1947" />
+          <stop stopColor="#CF1C51" />
+          <stop offset="1" stopColor="#AF1947" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_72_611"
@@ -48,8 +48,8 @@ export const TeamBadge = () => {
           y2="44.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FEE3A2" />
-          <stop offset="1" stop-color="#F2A768" />
+          <stop stopColor="#FEE3A2" />
+          <stop offset="1" stopColor="#F2A768" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_72_611"
@@ -59,8 +59,8 @@ export const TeamBadge = () => {
           y2="32.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FEE3A2" />
-          <stop offset="1" stop-color="#F2A768" />
+          <stop stopColor="#FEE3A2" />
+          <stop offset="1" stopColor="#F2A768" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_72_611"
@@ -70,8 +70,8 @@ export const TeamBadge = () => {
           y2="28.5"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FEE3A2" />
-          <stop offset="1" stop-color="#F2A768" />
+          <stop stopColor="#FEE3A2" />
+          <stop offset="1" stopColor="#F2A768" />
         </linearGradient>
       </defs>
     </svg>
