@@ -4,6 +4,11 @@
 @theme {
   --font-inter: 'Inter', sans-serif;
   --font-tactic: 'Tactic Sans', sans-serif;
+
+  --color-clr-red-500: #eb0237;
+  --color-clr-red-700: #a01131;
+  --color-clr-red-800: #701328;
+  --color-clr-gray-500: #787878;
 }
 
 @font-face {
