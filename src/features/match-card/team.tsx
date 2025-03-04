@@ -2,10 +2,11 @@ import { cn } from '../../shared/lib'
 import { TeamBadge } from '../../shared/ui/icons'
 
 type Props = {
+  teamName: string
   rowReverse?: boolean
 }
 
-export const Team = ({ rowReverse = false }: Props) => {
+export const Team = ({ teamName, rowReverse = false }: Props) => {
   return (
     <div
       className={cn('flex items-center gap-3.5', {
@@ -13,7 +14,7 @@ export const Team = ({ rowReverse = false }: Props) => {
       })}
     >
       <TeamBadge />
-      <p>Command №1</p>
+      <p>{teamName}</p>
     </div>
   )
 }
