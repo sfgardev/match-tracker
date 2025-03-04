@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react'
 import { cn } from '../../lib'
 
-type Color = 'green' | 'red' | 'orange'
+export type Color = 'green' | 'red' | 'orange'
 type Props = { color?: Color } & ComponentPropsWithoutRef<'span'>
 
 export const Badge = ({
