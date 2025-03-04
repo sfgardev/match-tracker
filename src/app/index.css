@@ -1,1 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import 'tailwindcss';
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-tactic: 'Tactic Sans', sans-serif;
+}
+
+@font-face {
+  font-family: 'Tactic Sans';
+  font-style: italic;
+  font-weight: bold;
+  src: url('./fonts/tactic-sans/TacticSansBoldItalic.woff2') format('woff2');
+}
