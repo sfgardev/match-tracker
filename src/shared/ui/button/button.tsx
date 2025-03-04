@@ -19,7 +19,7 @@ export const Button = ({
   return (
     <button
       className={cn(
-        'flex items-center gap-2.5 font-inter text-white text-lg font-semibold py-4 px-10 rounded-sm',
+        'flex items-center gap-2.5 font-inter text-white text-lg font-semibold py-4 px-10 rounded-sm cursor-pointer',
         variants[variant],
         'active:bg-clr-red-700',
         'disabled:bg-clr-red-800 disabled:text-clr-gray-500',
