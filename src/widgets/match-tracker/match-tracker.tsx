@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query'
 import { matchesApi } from '../../entities/match/api'
+import { AlertMessage } from '../../features/alert-message'
+import { FilterMatches, useFilterMatches } from '../../features/filter-matches'
 import { MatchCard } from '../../features/match-card'
 import { Button } from '../../shared/ui/button'
 import { Refresh } from '../../shared/ui/icons'
-import { AlertMessage } from '../../features/alert-message'
 
 export const MatchTracker = () => {
   const {
@@ -17,10 +18,16 @@ export const MatchTracker = () => {
     queryFn: matchesApi.getMatches,
   })
 
+  const { filter, filteredMatches, handleChangeFilter } =
+    useFilterMatches(matches)
+
   return (
     <>
       <header className="pb-5 flex justify-between">
-        <h2 className="font-tactic text-[2rem] text-white">Match Tracker</h2>
+        <div className="flex gap-2 items-center">
+          <h2 className="font-tactic text-[2rem] text-white">Match Tracker</h2>
+          <FilterMatches filter={filter} onChangeFilter={handleChangeFilter} />
+        </div>
 
         {isError && (
           <AlertMessage className="ml-auto">
@@ -34,7 +41,9 @@ export const MatchTracker = () => {
       </header>
       <div className="flex flex-col gap-3">
         {isPending && <div className="text-white">Loading...</div>}
-        {matches?.map((match) => <MatchCard key={match.title} match={match} />)}
+        {filteredMatches?.map((match) => (
+          <MatchCard key={match.title} match={match} />
+        ))}
       </div>
     </>
   )
