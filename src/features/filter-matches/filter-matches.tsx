@@ -12,7 +12,7 @@ export const FilterMatches = ({ filter, onChangeFilter }: Props) => {
     <Select
       value={filter}
       options={[
-        { label: 'Все статусы', value: 'all' },
+        { label: 'Все статусы', value: 'All' },
         { label: 'Live', value: Status.Ongoing },
         { label: 'Finished', value: Status.Finished },
         { label: 'Match preparing', value: Status.Scheduled },
