@@ -1,5 +1,6 @@
 import { Status } from '../../entities/match/model'
 import { Badge, BadgeColor } from '../../shared/ui/badge'
+import { motion } from 'framer-motion'
 
 type Props = {
   homeScore: number
@@ -29,7 +30,24 @@ export const Score = ({ homeScore, awayScore, status }: Props) => {
   return (
     <div className="flex flex-col items-center gap-1">
       <p className="text-xl">
-        {homeScore} : {awayScore}
+        <motion.span
+          key={`home-${homeScore}`}
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+        >
+          {homeScore}{' '}
+        </motion.span>
+        :
+        <motion.span
+          key={`away-${awayScore}`}
+          initial={{ opacity: 0, y: -5 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: 'easeOut' }}
+        >
+          {' '}
+          {awayScore}
+        </motion.span>
       </p>
       <Badge color={color}>{label}</Badge>
     </div>
