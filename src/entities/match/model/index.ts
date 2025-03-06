@@ -14,7 +14,7 @@ export enum Status {
   Scheduled = 'Scheduled',
 }
 
-type Team = {
+export type Team = {
   name: string
   place: number
   players: Player[]
@@ -22,7 +22,7 @@ type Team = {
   total_kills: number
 }
 
-type Player = {
+export type Player = {
   kills: number
   username: string
 }
