@@ -8,7 +8,7 @@ import { MatchModel } from '../../entities/match/model'
 export const MatchTracker = () => {
   const [matches, setMatches] = useState<MatchModel[]>([])
 
-  const { isError } = useWebsocket<MatchModel[]>({
+  const { isConnected, isError } = useWebsocket<MatchModel[]>({
     url: 'wss://app.ftoyd.com/fronttemp-service/ws',
     onMessage: ({ data }) => setMatches(data),
     onOpen: () => console.log('WebSocket connected'),
@@ -33,7 +33,11 @@ export const MatchTracker = () => {
           </AlertMessage>
         )}
       </header>
+
       <div className="flex flex-col gap-3">
+        {!isConnected && !isError && (
+          <div className="text-white">Loading...</div>
+        )}
         {filteredMatches?.map((match) => (
           <MatchCard key={match.title} match={match} />
         ))}

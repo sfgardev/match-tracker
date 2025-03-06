@@ -25,6 +25,7 @@ export const useWebsocket = <T>({
 
     socket.onopen = () => {
       setIsConnected(true)
+      setIsError(false)
       onOpen?.()
     }
 
@@ -41,10 +42,12 @@ export const useWebsocket = <T>({
       console.error('WebSocket error:', event)
       onError?.(event)
       setIsError(true)
+      setIsConnected(false)
     }
 
     socket.onclose = () => {
       setIsConnected(false)
+      setIsError(false)
       onClose?.()
     }
 
