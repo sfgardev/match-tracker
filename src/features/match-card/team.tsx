@@ -9,11 +9,11 @@ type Props = {
 export const Team = ({ teamName, rowReverse = false }: Props) => {
   return (
     <div
-      className={cn('flex items-center gap-3.5', {
+      className={cn('flex items-center gap-3.5 max-sm:gap-1', {
         'flex-row-reverse': rowReverse,
       })}
     >
-      <TeamBadge />
+      <TeamBadge className="max-sm:w-7 max-sm:h-7" />
       <p>{teamName}</p>
     </div>
   )

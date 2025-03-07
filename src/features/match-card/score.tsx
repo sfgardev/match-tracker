@@ -29,7 +29,7 @@ export const Score = ({ homeScore, awayScore, status }: Props) => {
 
   return (
     <div className="flex flex-col items-center gap-1">
-      <p className="text-xl">
+      <p className="text-xl max-sm:text-sm">
         <motion.span
           key={`home-${homeScore}`}
           initial={{ opacity: 0, y: -5 }}

@@ -21,8 +21,8 @@ export const MatchTracker = () => {
 
   return (
     <>
-      <header className="pb-5 flex justify-between">
-        <div className="flex gap-2 items-center">
+      <header className="pb-5 flex justify-between max-sm:justify-center">
+        <div className="flex gap-2 items-center max-sm:flex-col max-sm: flex-1">
           <h2 className="font-tactic text-[2rem] text-white">Match Tracker</h2>
           <FilterMatches filter={filter} onChangeFilter={handleChangeFilter} />
         </div>

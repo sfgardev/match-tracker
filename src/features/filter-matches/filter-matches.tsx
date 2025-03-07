@@ -10,6 +10,7 @@ type Props = {
 export const FilterMatches = ({ filter, onChangeFilter }: Props) => {
   return (
     <Select
+      className="w-full sm:w-auto"
       value={filter}
       options={[
         { label: 'Все статусы', value: 'All' },

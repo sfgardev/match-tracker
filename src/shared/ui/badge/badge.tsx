@@ -19,7 +19,7 @@ export const Badge = ({
   return (
     <span
       className={cn(
-        'inline-block text-center min-w-24 py-1.5 px-2 font-inter font-semibold text-xs text-white rounded-sm',
+        'inline-block text-center min-w-24 py-1.5 px-2 font-inter font-semibold text-xs text-white rounded-sm max-sm:min-w-16',
         colors[color],
         className
       )}

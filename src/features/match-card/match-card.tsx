@@ -5,6 +5,7 @@ import { Team } from './team'
 import { ChevronDown } from '../../shared/ui/icons'
 import { cn } from '../../shared/lib'
 import { Details } from './details'
+import { Divider } from '../../shared/ui/divider'
 
 type Props = {
   match: MatchModel
@@ -16,22 +17,26 @@ export const MatchCard = ({ match }: Props) => {
   const { homeTeam, awayTeam, homeScore, awayScore, status } = match
 
   return (
-    <div className="bg-[#0B0E12] font-inter text-base font-semibold text-white p-4 rounded-sm flex flex-col gap-8">
+    <div
+      className={cn(
+        'bg-[#0B0E12] font-inter text-base font-semibold text-white p-4 rounded-sm max-sm:text-sm max-sm:p-2'
+      )}
+    >
       <div
         onClick={() => setIsDetailsOpen((open) => !open)}
-        className=" flex justify-between"
+        className="flex justify-between items-center gap-2 max-sm:block"
       >
-        <Team teamName={homeTeam.name} />
-        <Score homeScore={homeScore} awayScore={awayScore} status={status} />
-        <div className="flex items-center gap-3">
+        <div className="flex justify-between flex-1 max-sm:mb-2 max-sm:gap-1">
+          <Team teamName={homeTeam.name} />
+          <Score homeScore={homeScore} awayScore={awayScore} status={status} />
           <Team teamName={awayTeam.name} rowReverse />
-          <ChevronDown
-            className={cn(
-              'transition-transform cursor-pointer',
-              isDetailsOpen && 'rotate-180'
-            )}
-          />
         </div>
+        <ChevronDown
+          className={cn(
+            'transition-transform cursor-pointer max-sm:mx-auto',
+            isDetailsOpen && 'rotate-180'
+          )}
+        />
       </div>
 
       <div
@@ -39,9 +44,10 @@ export const MatchCard = ({ match }: Props) => {
           'grid-rows-[1fr]': isDetailsOpen,
         })}
       >
-        <div className="grid grid-cols-2 gap-8 overflow-hidden">
+        <div className="grid grid-cols-2 gap-8 overflow-hidden max-xl:grid-cols-1 max-xl:gap-2">
           <Details {...homeTeam} />
-          <Details {...awayTeam} />
+          <Divider className="hidden max-xl:flex" />
+          <Details className="max-xl:p-0" {...awayTeam} />
         </div>
       </div>
     </div>
